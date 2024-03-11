@@ -1,4 +1,3 @@
-
 <div class="second-container">
   <div class="cards-container">
     <h3 class="subtitle classes">Class <%=@section.name%> Grades</h3 class="subtitle">
@@ -40,7 +39,9 @@
           <tr>
             <th>Student Name</th>
             <% @section.courses.each do |course| %>
-              <th><%= course.name %></th>
+      <th>
+        <i class="<%= course.icon %>"></i> <%= course.name %>
+      </th>
             <% end %>
             <th>Average</th>
           </tr>
