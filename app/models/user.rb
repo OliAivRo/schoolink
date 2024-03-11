@@ -10,4 +10,6 @@ class User < ApplicationRecord
   belongs_to :section, optional: true
   has_many :courses, foreign_key: 'teacher_id'
   belongs_to :section, optional: true
+  has_many :students, class_name: 'User', foreign_key: 'parent_id', inverse_of: :parent
+  belongs_to :parent, class_name: 'User', optional: true, inverse_of: :students
 end
